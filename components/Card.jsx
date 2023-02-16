@@ -1,19 +1,19 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Card = props => {
+const Card =( {data}) => {
     return(
         <Container>
             <Cover>
                 <Image source={{uri: 'https://wallpapershome.com/images/pages/ico_h/23424.jpg'}} />
-                <Title>Styled Component</Title>
+                <Title>{data.title}</Title>
             </Cover>
             <Content>
                 <Logo source={{uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"}} />
                 <Wrapper>
 
-                <Caption>React Native</Caption>
-                <Text>5 of 12 content</Text>
+                <Caption>{data.captions}</Caption>
+                <Text>{data.text}</Text>
                 </Wrapper>
 
             </Content>
@@ -52,8 +52,8 @@ const Title = styled.Text`
 color: white;
 font-size: 24px;
 font-weight: bold;
-margin: 10px 0px 0px 10px
-width: 50%
+margin: 10px 0px 0px 10px;
+width: 50%;
 `
 
 const Content = styled.View`

@@ -1,6 +1,12 @@
 import styled from "styled-components";
+import { ScrollView } from 'react-native'
 import Card from './components/Card'
 export default function App() {
+  const data = {
+    title: 'Styled Component',
+    captions: 'React native',
+    text: '5 of 12 content'
+  }
   return (
     <Container>
       <TitleBar>
@@ -9,7 +15,11 @@ export default function App() {
         <Name>Ankit</Name>
       </TitleBar>
       <Subtitle>Software Engineer</Subtitle>
-      <Card />
+      <ScrollView  horizontal={true}>
+      <Card data={data} />
+      <Card data={data} />
+      <Card data={data} />
+      </ScrollView>
     </Container>
   );
 }
