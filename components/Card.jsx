@@ -69,7 +69,10 @@ const Logo = styled.Image`
 `
 
 const Text = styled.Text`
-    
+    color: #b8bece
+    font-weight: bold;
+    font-size: 15px;
+    text-transform: uppercase;
 `
 
 const Caption = styled.Text`
