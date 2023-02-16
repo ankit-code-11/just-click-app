@@ -12,8 +12,8 @@ const Card = props => {
                 <Logo source={{uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"}} />
                 <Wrapper>
 
-                <Text>React Native</Text>
-                <Subtitle>5 of 12 content</Subtitle>
+                <Caption>React Native</Caption>
+                <Text>5 of 12 content</Text>
                 </Wrapper>
 
             </Content>
@@ -34,7 +34,7 @@ const Container = styled.View`
 
 const Cover = styled.View`
 width: 100%;
-height: 80%;
+height: 70%;
 border-top-left-radius: 14px;
 border-top-right-radius: 14px;
 overflow: hidden;
@@ -59,6 +59,8 @@ width: 50%
 const Content = styled.View`
 padding-left: 20px;
 flex-direction: row;
+align-items: center;
+height: 25%
 `
 
 const Logo = styled.Image`
@@ -70,8 +72,12 @@ const Text = styled.Text`
     
 `
 
-const Subtitle = styled.Text`
-    
+const Caption = styled.Text`
+    color: grey;
+    font-size: 20px; 
+    font-weight: 600;
 `
 
-const Wrapper = styled.View``
+const Wrapper = styled.View`
+margin-left: 10px
+`
