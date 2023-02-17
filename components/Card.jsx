@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import SvgComponent from './Icon'
 
 const Card =( {data}) => {
     return(
@@ -11,11 +12,9 @@ const Card =( {data}) => {
             <Content>
                 <Logo source={{uri: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/1200px-React-icon.svg.png"}} />
                 <Wrapper>
-
-                <Caption>{data.captions}</Caption>
-                <Text>{data.text}</Text>
+                    <Caption>{data.captions}</Caption>
+                    <Text>{data.text}</Text>
                 </Wrapper>
-
             </Content>
         </Container>
     )
@@ -25,7 +24,7 @@ export default Card;
 
 const Container = styled.View`
     background: white;
-    width: 65%;
+    flex: 1;
     height: 28%;
     border-radius: 10px;
     margin: 20px 0px 0px 20px;

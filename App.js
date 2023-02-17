@@ -1,6 +1,7 @@
 import styled from "styled-components";
-import { ScrollView } from 'react-native'
+import { ScrollView, SafeAreaView } from 'react-native'
 import Card from './components/Card'
+import { Ionicons } from "@expo/vector-icons";
 export default function App() {
   const data = {
     title: 'Styled Component',
@@ -13,12 +14,13 @@ export default function App() {
         <Avatar source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO3SPvKM7RSfp_dsgU-tnS-6Ttrf8h5NPZpAGBda1UKEBkPriCq04Su1bQumWaRIJzTyk&usqp=CAU'}} />
         <Title>Welcome Back</Title>
         <Name>Ankit</Name>
+        <Ionicons name="ios-notifications" style={{position: 'absolute', top: 5, right: 20}} size={25} color="#4775f2" />
       </TitleBar>
       <Subtitle>Software Engineer</Subtitle>
-      <ScrollView  horizontal={true}>
-      <Card data={data} />
-      <Card data={data} />
-      <Card data={data} />
+      <ScrollView horizontal={true}>
+        <Card data={data} />
+        <Card data={data} />
+        <Card data={data} />
       </ScrollView>
     </Container>
   );
