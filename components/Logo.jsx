@@ -1,7 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Logo = (props) => {
+const Logo = ({data}) => {
+    console.log(data, 'data')
     return (
         <Container style={{
             elevation: 8,
@@ -9,9 +10,9 @@ const Logo = (props) => {
             shadowRadius: 5,
             shadowColor: 'black',
             shadowOffset: { height: 10, width: 10 },
-          }}>dfs
-            <Image source={{uri: props.image}} resize="contain" />
-            <Text>{props.title}</Text>
+          }}>
+            <Image source={{uri: data.image}} resize="contain" />
+            <Text>{data.name}</Text>
         </Container>
     )
 }

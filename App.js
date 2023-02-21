@@ -1,14 +1,39 @@
 import styled from "styled-components";
-import { ScrollView, SafeAreaView, View, Text } from 'react-native'
+import { ScrollView, SafeAreaView, View, Text, FlatList } from 'react-native'
 import Card from './components/Card'
 import { Ionicons } from "@expo/vector-icons";
 import Logo from './components/Logo'
 export default function App() {
-  const data = {
-    title: 'Styled Component',
-    captions: 'React native',
-    text: '5 of 12 content'
-  }
+  const data = [
+    {
+      title: "React Native for Designers",
+      image: '',
+      subtitle: "React Native",
+      caption: "1 of 12 sections",
+      logo: require("./assets/logo-react.png")
+    },
+    {
+      title: "Styled Components",
+      image: require("./assets/background12.jpg"),
+      subtitle: "React Native",
+      caption: "2 of 12 sections",
+      logo: require("./assets/logo-react.png")
+    },
+    {
+      title: "Props and Icons",
+      image: require("./assets/background13.jpg"),
+      subtitle: "React Native",
+      caption: "3 of 12 sections",
+      logo: require("./assets/logo-react.png")
+    },
+    {
+      title: "Static Data and Loop",
+      image: require("./assets/background14.jpg"),
+      subtitle: "React Native",
+      caption: "4 of 12 sections",
+      logo: require("./assets/logo-react.png")
+    }
+  ];
 
   const skills = [
     {
@@ -33,30 +58,24 @@ export default function App() {
     <Container>
       <TitleBar>
         <Avatar source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO3SPvKM7RSfp_dsgU-tnS-6Ttrf8h5NPZpAGBda1UKEBkPriCq04Su1bQumWaRIJzTyk&usqp=CAU'}} />
-        <Title>Welcome Back</Title>
+        <Title>Hi 👋, I'm </Title>
         <Name>अंकित यादव </Name>
         <Ionicons name="ios-notifications" style={{position: 'absolute', top: 5, right: 20}} size={25} color="#4775f2" />
       </TitleBar>
       <Wrapper>
-      <ScrollView  horizontal={true} showsHorizontalScrollIndicator={false}>
-        {
-          skills.map((data) => {
-           return  (
-            <View>
-              <Text>
-              {Logo}
-              </Text>
-            </View>
-           )
-          })
-        }
+      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} >
+      {skills.map((item, i) => {
+        console.log(item)
+        return (<Logo key={i} data={item} />)
+      })}
+
       </ScrollView>
       </Wrapper>
       <Subtitle>Software Engineer</Subtitle>
       <ScrollView horizontal={true}>
-        <Card data={data} />
-        <Card data={data} />
-        <Card data={data} />
+        {data.map((item, i) => {
+          <Card key={i} data={item} />
+        })}
       </ScrollView>
     </Container>
   );
@@ -89,7 +108,7 @@ font-weight: 500;
 `
 const Wrapper = styled.View`
 margin-top: 29px;  
-flex-direction: row;
+/* flex-direction: row; */
 `
 
 const Name = styled.Text`
