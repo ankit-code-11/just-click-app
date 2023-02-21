@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Logo = ({data}) => {
-    console.log(data, 'data')
     return (
         <Container style={{
             elevation: 8,

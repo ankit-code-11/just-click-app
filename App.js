@@ -3,35 +3,33 @@ import { ScrollView, SafeAreaView, View, Text, FlatList } from 'react-native'
 import Card from './components/Card'
 import { Ionicons } from "@expo/vector-icons";
 import Logo from './components/Logo'
+import Course from "./components/Course";
 export default function App() {
+
   const data = [
     {
       title: "React Native for Designers",
-      image: '',
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3nskei5EBueDjklbw1uTb1ENG4sIAasNlew&usqp=CAU',
       subtitle: "React Native",
       caption: "1 of 12 sections",
-      logo: require("./assets/logo-react.png")
     },
     {
       title: "Styled Components",
-      image: require("./assets/background12.jpg"),
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSR4BAD4FJGmgqnCqC_swkCHsZKewATIRFoEA&usqp=CAU',
       subtitle: "React Native",
       caption: "2 of 12 sections",
-      logo: require("./assets/logo-react.png")
     },
     {
       title: "Props and Icons",
-      image: require("./assets/background13.jpg"),
+      image:'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSegh4DF6pFxCr4ySox9uxdXmma8-MbveapA&usqp=CAU',
       subtitle: "React Native",
       caption: "3 of 12 sections",
-      logo: require("./assets/logo-react.png")
     },
     {
       title: "Static Data and Loop",
-      image: require("./assets/background14.jpg"),
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSV_aXNOZFb0_x_9K--E70PZbtmPbIPtpFAiw&usqp=CAU',
       subtitle: "React Native",
       caption: "4 of 12 sections",
-      logo: require("./assets/logo-react.png")
     }
   ];
 
@@ -54,28 +52,73 @@ export default function App() {
     }
   ]
 
+  const courses = [
+    {
+      title: "Prototype in InVision Studio",
+      subtitle: "10 sections",
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSF2iQvzV5yIVy1FT5kY99N8jMDfhVsSYoWbA&usqp=CAU',
+      logo: '',
+      author: "Meng To",
+      avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiOH80WRk1WEtUqNcwmVf6MfxzLuSQHoojxGD7ge6eAlGyA-ZkL-5mJ99z8n2rsQHlZlo&usqp=CAU',
+      caption: "Design and interactive prototype"
+    },
+    {
+      title: "React for Designers",
+      subtitle: "12 sections",
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpd3FT2ToGsvN2dT9SJiUxoSkcJp1mVKKsIA&usqp=CAU',
+      logo: '',
+      author: "Meng To",
+      avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTW8h_RFJydF6ahain7qyoL_W90NnkWr2Lt7Q&usqp=CAU',
+      caption: "Learn to design and code a React site"
+    },
+    {
+      title: "Design and Code with Framer X",
+      subtitle: "10 sections",
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-jzCqyN6g8ATvCK7pzq0qbvWobx_MCqJnXSyhXQmguvx_7SGVachzB9jBjRQHOhuLSEg&usqp=CAU',
+      logo: '',
+      author: "Meng To",
+      avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWqS-NyRznIj7H6Tmkj7jHNtiGKlC45pRJuQ&usqp=CAU',
+      caption: "Create powerful design and code components for your app"
+    },
+    {
+      title: "Design System in Figma",
+      subtitle: "10 sections",
+      image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKhq-O93moCiLtKbCv6HALkAyZmmJpLpeCX_hIfXKzP2tKG_r6OFpFvMGYNjEN8CXxshY&usqp=CAU',
+      logo:'',
+      author: "Meng To",
+      avatar: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSXzL_-7e866moypSJcdnAcYp4J5AkYJSCyCi4JdCeekBLE3BymBQ2xn7dYz6lE9lj6W10&usqp=CAU',
+      caption:
+        "Complete guide to designing a site using a collaborative design tool"
+    }
+  ];
+
   return (
     <Container>
       <TitleBar>
         <Avatar source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO3SPvKM7RSfp_dsgU-tnS-6Ttrf8h5NPZpAGBda1UKEBkPriCq04Su1bQumWaRIJzTyk&usqp=CAU'}} />
         <Title>Hi 👋, I'm </Title>
-        <Name>अंकित यादव </Name>
+        <Name>अंकित यादव  </Name>
         <Ionicons name="ios-notifications" style={{position: 'absolute', top: 5, right: 20}} size={25} color="#4775f2" />
       </TitleBar>
       <Wrapper>
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false} >
       {skills.map((item, i) => {
-        console.log(item)
         return (<Logo key={i} data={item} />)
       })}
-
       </ScrollView>
       </Wrapper>
       <Subtitle>Software Engineer</Subtitle>
-      <ScrollView horizontal={true}>
+      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         {data.map((item, i) => {
-          <Card key={i} data={item} />
+         return <Card key={i} data={item}  />
         })}
+      </ScrollView>
+      <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
+        {
+          courses.map((item, i) => {
+            return <Course key={i} data={item} />
+          })
+        }
       </ScrollView>
     </Container>
   );
@@ -117,6 +160,7 @@ font-weight: bold;
 color: #3c4560
 `
 const Subtitle = styled.Text`
-margin: 50px 0px 0px 50px;
+margin: 20px 0px 0px 30px;
 text-transform: uppercase;
+font-weight: bold;
 `
