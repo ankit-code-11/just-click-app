@@ -4,6 +4,7 @@ import Card from './components/Card'
 import { Ionicons } from "@expo/vector-icons";
 import Logo from './components/Logo'
 import Course from "./components/Course";
+import Menu from "./components/Menu"
 export default function App() {
 
   const data = [
@@ -94,6 +95,7 @@ export default function App() {
 
   return (
     <Container>
+      <Menu />
       <TitleBar>
         <Avatar source={{uri: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSO3SPvKM7RSfp_dsgU-tnS-6Ttrf8h5NPZpAGBda1UKEBkPriCq04Su1bQumWaRIJzTyk&usqp=CAU'}} />
         <Title>Hi 👋, I'm </Title>
@@ -112,7 +114,9 @@ export default function App() {
         {data.map((item, i) => {
          return <Card key={i} data={item}  />
         })}
+        
       </ScrollView>
+
       <ScrollView horizontal={true} showsHorizontalScrollIndicator={false}>
         {
           courses.map((item, i) => {
@@ -120,6 +124,7 @@ export default function App() {
           })
         }
       </ScrollView>
+      
     </Container>
   );
 }
